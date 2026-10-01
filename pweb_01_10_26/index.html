@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROFESSOR E MATÉRIA</title>
+
+    <script>
+        let contadorChave = 0;
+        let nome;
+
+        function exibirVariavel() {
+            nome = document.getElementById("nome").value;
+            alert(nome);
+        }
+
+        function salvarLocalmente() {
+            let nome = document.getElementById("nome").value;
+             let pesquisachave = document.getElementById("chave").value;
+            localStorage.setItem(pesquisachave, nome);
+            contadorChave = contadorChave + 1;
+        }
+
+        function listarLocal() {
+            let pesquisachave = document.getElementById("chave").value;
+
+            alert(localStorage.getItem(pesquisachave));
+            document.getElementById("res").innerHTML = localStorage.getItem(pesquisachave)
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>PROFESSOR E MATÉRIA</h1>
+
+    <input type="text" id="nome" placeholder="PROFESSOR">
+
+    <input type="text" id="chave" placeholder="MATÉRIA">
+
+    <input type="button" value="TESTE" onclick="exibirVariavel()">
+
+    <input type="button" value="SALVAR PROFESSOR" onclick="salvarLocalmente()">
+
+    <input type="button" value="EXIBIR PROFESSOR DA MATÉRIA" onclick="listarLocal()">
+
+    <p id="res"></p>
+
+</body>
+</html>
